@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-heading: "Calibri", "Kalpurush", sans-serif;
+  --font-body: "Calibri", "Kalpurush", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-bengali-sans: "Calibri", "Kalpurush", sans-serif;
+  --font-bengali-serif: "Calibri", "Kalpurush", serif;
+  
+  --color-emerald-950: #022c22;
+  --color-gold-500: #D4AF37;
+  --color-gold-600: #B5952F;
+  --color-ivory: #FDFBF7;
+}
+
+body {
+  background-color: var(--color-ivory);
+}
+
+.shimmer-btn {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+  transform: rotate(30deg);
+  animation: shimmer 3s infinite;
+}
+@keyframes shimmer {
+  0% { transform: translateX(-100%) rotate(30deg); }
+  100% { transform: translateX(100%) rotate(30deg); }
+}
+
+.glass-card {
+  background: rgba(253, 251, 247, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 0 10px 40px rgba(2, 44, 34, 0.08);
+}
